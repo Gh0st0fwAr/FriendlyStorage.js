@@ -1,9 +1,4 @@
-//test 
-
 class FriendlyStorage {
-   constructor() {
-      // console.log('FS ready')
-   }
    
    returnCurrentData() {
       return localStorage;
@@ -43,12 +38,10 @@ class FriendlyStorage {
          if(this._checkForJson(item)) {
             let itemObj = {};
             itemObj[key] = this._fromJson(item);
-            // console.log(itemObj)
             return itemObj;
          } else {
             let itemObj = {};
             itemObj[key] = item;
-            // console.log(itemObj)
             return itemObj;
          }
       } else {
@@ -173,8 +166,6 @@ class FriendlyStorage {
         ============================= */
       let check = Object.prototype.toString.call(val).slice(8, -1);
       check == 'String' ? check = 'Array' : ''
-      // console.log(type)
-      // console.log(check)
       if (check == type) {
          return true
       } else {
@@ -212,7 +203,6 @@ class FriendlyStorage {
       } else {
          return false
       }
-      // return true
    }
 
    _toJson(obj) {
@@ -250,7 +240,6 @@ class FriendlyStorage {
    }
 }
 
-// const S = new FriendlyStorage();
 window.S = new FriendlyStorage();
 
 export default S
